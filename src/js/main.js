@@ -109,24 +109,24 @@ const headerParallaxHandler = () => {
 // Processes - list
 const processesInfo = [
 	{
-		heading: 'Jak przebiegają rozmowy?',
-		text: 'Zaczynamy od określenia świadczonej usługi. Jeżeli jest to budowa lub projektowanie, to pytamy czy istnieje jakieś logo, bądź wizytówka firmy. Następnie zapytamy o treści, które miałyby się znaleźć na stronie. Na podstawie tego tworzymy wyłącznie strukturę i wyceniamy projekt. Następnie zaczynamy projektować.',
-		button: 'Konsultacja',
+		heading: 'How do conversations go?',
+		text: 'We start by defining the service provided. If it is construction or design, we ask if there is any logo or business card. Then we ask about the content that should be on the site. Based on this, we create only the structure and price the project. Then we start designing.',
+		button: 'Consultation',
 	},
 	{
-		heading: 'Jak wygląda prezentacja projektu?',
-		text: 'Po skończeniu projektu strony, przedstawiamy go Tobie do ocenienia. Wtedy przyjmujemy wszelkie uwagi dot. doboru kolorów, budowy sekcji itd. Tłumaczymy też, czemu pewne elementy muszą zawierać niektóre cechy. Później nanosimy wszelkie zmiany.',
-		button: 'Prezentacja',
+		heading: 'What does the project presentation look like?',
+		text: 'After finishing the website project, we present it to you for evaluation. Then we accept all comments regarding color selection, section construction, etc. We also explain why certain elements must contain certain features. Later we apply all changes.',
+		button: 'Presentation',
 	},
 	{
-		heading: 'Czym jest etap zatwierdzenia?',
-		text: 'To krok, w którym decydujesz się na podjęcie lub odrzucenie naszych usług. Jeżeli zlecisz nam stworzenie strony, to przekażemy Ci ile prawdopodobnie zajmie to nam czasu. Dodatkowo będziemy potrzebowali dokładnych treści, które mają się finalnie znaleźć na Twojej witrynie.',
-		button: 'Zatwierdzenie',
+		heading: 'What is the approval stage?',
+		text: 'This is the step where you decide to accept or reject our services. If you commission us to create a website, we will tell you how long it will probably take us. Additionally, we will need detailed content that should finally be on your website.',
+		button: 'Approval',
 	},
 	{
-		heading: 'Wykonanie projektu!',
-		text: 'Ten krok zostaw nam! Od razu zabierzemy się do tworzenia Twojej wymarzonej wizytówki internetowej. Podczas tego czasu możesz nam przekazać wszelkie dodatkowe informacje, a my weźmiemy je pod uwagę. Po zakończonej pracy zostało tylko umieścić ją na hostingu.',
-		button: 'Wykonanie',
+		heading: 'Project execution!',
+		text: 'Leave this step to us! We will immediately start creating your dream business card website. During this time, you can give us any additional information, and we will take it into account. After the work is finished, all that remains is to place it on hosting.',
+		button: 'Execution',
 	},
 ];
 const processTitle = document.querySelector('.processes-content-title');
