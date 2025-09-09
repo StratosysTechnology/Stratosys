@@ -6,9 +6,9 @@ const cross = document.querySelector('.cross')
 const formBox = document.querySelector('.form-box')
 const notifications = document.querySelector('.notifications')
 const notificationMessages = {
-  cooldown: 'Błąd podczas wysyłania maila.<br>Osiągnięto limit maili wynoszący: <span class="highlight">3</span>.<br>Spróbuj 24h po wysłaniu ostatniego maila.',
-  error: 'Błąd podczas wysyłania maila.<br>Spróbuj ponownie później.',
-  success: ' E-mail pomyślnie wysłano.<br>Liczba maili możliwych do wysłania<br>w ciągu następnych 24h: <span class="highlight"></span>.'
+  cooldown: 'Error sending email.<br>Email limit reached: <span class="highlight">3</span>.<br>Try again 24h after sending the last email.',
+  error: 'Error sending email.<br>Please try again later.',
+  success: 'Email sent successfully.<br>Number of emails possible to send<br>in the next 24h: <span class="highlight"></span>.'
 }
 const opennedForm = formBox.querySelector('.open-form-inner')
 const form = document.querySelector('.contact form')

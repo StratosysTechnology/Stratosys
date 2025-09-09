@@ -125,7 +125,7 @@ const renderProject = (project, renderShowcase) => {
   visitBtn.setAttribute('target', '_blank')
 	visitBtn.setAttribute('rel', 'noopener')
 	const visitIcon = makeCustomElement('i', ['bx', 'bx-globe']);
-	visitBtn.append('Odwiedź', visitIcon);
+	visitBtn.append('Visit', visitIcon);
 	const codeBtn = makeCustomElement('a', ['button', 'secondary']);
 	codeBtn.setAttribute('href', project.code);
   codeBtn.setAttribute('target', '_blank')
@@ -355,44 +355,44 @@ const renderDesktopOrMobile = () => {
   const projectsSection = document.querySelector('.projects')
   const processes = [
       {
-        heading: 'Jak przebiegają rozmowy?',
-        text: 'Zaczynamy od określenia świadczonej usługi. Jeżeli jest to budowa lub projektowanie, to pytamy czy istnieje jakieś logo, bądź wizytówka przedsiębiorstwa. Następnie zapytamy o treści, które miałyby się znaleźć na stronie. Na podstawie tego tworzymy wyłącznie strukturę i wyceniamy projekt. Potem zaczynamy projektować.',
-        button: 'Konsultacja',
+        heading: 'How do conversations go?',
+        text: 'We start by defining the service provided. If it is construction or design, we ask if there is any logo or business card. Then we ask about the content that should be on the site. Based on this, we create only the structure and price the project. Then we start designing.',
+        button: 'Consultation',
       },
       {
-        heading: 'Jak wygląda prezentacja projektu?',
-        text: 'Po skończeniu projektu strony, przedstawiamy go Tobie do ocenienia. Wtedy przyjmujemy wszelkie uwagi dot. doboru kolorów, budowy sekcji itd. Tłumaczymy też, czemu pewne elementy muszą zawierać niektóre cechy. Później nanosimy wszelkie zmiany.',
-        button: 'Prezentacja',
+        heading: 'What does the project presentation look like?',
+        text: 'After finishing the website project, we present it to you for evaluation. Then we accept all comments regarding color selection, section construction, etc. We also explain why certain elements must contain certain features. Later we apply all changes.',
+        button: 'Presentation',
       },
       {
-        heading: 'Czym jest etap zatwierdzenia?',
-        text: 'To krok, w którym decydujesz się na podjęcie lub odrzucenie naszych usług. Jeżeli zlecisz nam stworzenie strony, to przekażemy Ci ile prawdopodobnie zajmie to nam czasu. Dodatkowo będziemy potrzebowali dokładnych treści, które mają się finalnie znaleźć na Twojej wizytówce.',
-        button: 'Zatwierdzenie',
+        heading: 'What is the approval stage?',
+        text: 'This is the step where you decide to accept or reject our services. If you commission us to create a website, we will tell you how long it will probably take us. Additionally, we will need detailed content that should finally be on your website.',
+        button: 'Approval',
       },
       {
-        heading: 'Wykonanie projektu!',
-        text: 'Ten krok zostaw nam! Od razu zabierzemy się do tworzenia Twojej nowoczesnej, wymarzonej wizytówki internetowej. Podczas tego czasu możesz nam przekazać wszelkie dodatkowe informacje, a my weźmiemy je pod uwagę. Po zakończonej pracy zostało tylko umieścić ją na hostingu.',
-        button: 'Wykonanie',
+        heading: 'Project execution!',
+        text: 'Leave this step to us! We will immediately start creating your modern, dream business card website. During this time, you can give us any additional information, and we will take it into account. After the work is finished, all that remains is to place it on hosting.',
+        button: 'Execution',
       }
   ]
   const projects = [
     {
       name: 'power',
       title: 'Power Kwidzyn',
-      tag: 'Projekt i budowa',
+      tag: 'Design and Development',
       date: '8.05.2023',
       visit: 'https://power-kwidzyn.pl',
       code: 'https://github.com/patrykkawiak/OSK-Power-Kwidzyn',
-      content: 'Power Kwidzyn to szkółka prawa jazdy, która przez długi czas miała słabo funkcjonującą, przestarzałą stronę internetową. Pomimo niepewności, właściciel działalności postanowił nam zaufać i końcowo jest zadowolony z o wiele lepszej wizytówki swojego biznesu w internecie.'
+      content: 'Power Kwidzyn is a driving school that had a poorly functioning, outdated website for a long time. Despite uncertainty, the business owner decided to trust us and is ultimately satisfied with a much better business card for his business on the internet.'
     },
     {
       name: 'rebax',
       title: 'Rebax',
-      tag: 'Projekt i budowa',
+      tag: 'Design and Development',
       date: '26.04.2023',
       visit: 'https://rebax.pl',
       code: 'https://github.com/patrykkawiak/Rebax',
-      content: 'Firma Rebax przed naszą usługą nie posiadała strony internetowej. Pomimo tego, że została wprowadzona do sieci niedawno, to dumnie prezentuje tę hurtownię budowlaną, wyświetlając się na pierwszych stronach przeglądarek internautów.'
+      content: 'Rebax company did not have a website before our service. Despite being introduced to the network recently, it proudly presents this construction wholesale, appearing on the first pages of internet browsers.'
     }
   ]
   const navLinks = [
@@ -402,12 +402,12 @@ const renderDesktopOrMobile = () => {
       onLeft: true,
     },
     {
-      text: 'O nas',
+      text: 'About us',
       href: '#about-us',
       onLeft: true,
     },
     {
-      text: 'Usługi',
+      text: 'Services',
       href: '#services',
       onLeft: true,
     },
@@ -417,7 +417,7 @@ const renderDesktopOrMobile = () => {
       onLeft: false
     },
     {
-      text: 'Kontakt',
+      text: 'Contact',
       href: '#contact',
       onLeft: false
     }
