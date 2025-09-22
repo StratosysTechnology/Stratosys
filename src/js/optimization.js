@@ -234,21 +234,21 @@ const renderSocial = (social) => {
 };
 
 const renderMobileNavbar = (navbar, links, socials) => {
-	const isMade = document.querySelector('.mobile-nav');
-	const desktopVersion = document.querySelector('.desktop-nav');
-	if (desktopVersion) {
-		desktopVersion.remove();
-	}
-	if (!isMade) {
-		const mobileNav = makeCustomElement('div', ['mobile-nav']);
-		const logo = makeCustomElement('a', ['logo']);
-		logo.setAttribute('href', '#');
-		const logoImg = makeCustomElement('img', ['logo-img']);
-		logoImg.setAttribute('src', './dist/img/logo.png');
-		logoImg.setAttribute(
-			'alt',
-			'Logo przedstawiające szopa stworzonego z prostych kształtów geometrycznych.'
-		);
+const isMade = document.querySelector('.mobile-nav');
+const desktopVersion = document.querySelector('.desktop-nav');
+if (desktopVersion) {
+desktopVersion.remove();
+}
+if (!isMade) {
+const mobileNav = makeCustomElement('div', ['mobile-nav']);
+const logo = makeCustomElement('a', ['logo']);
+logo.setAttribute('href', '#');
+const logoImg = makeCustomElement('img', ['logo-img']);
+logoImg.setAttribute('src', './src/img/STRATOSYS (1).png');
+logoImg.setAttribute(
+'alt',
+'STRATOSYS Technology logo'
+);
 		logo.append(logoImg);
 		const burger = makeCustomElement('button', ['burger-icon']);
 		for (let i = 0; i < 3; i++) {
@@ -300,10 +300,10 @@ const renderDesktopNavbar = (navbar, links, socials) => {
 		const logo = makeCustomElement('a', ['logo']);
       logo.setAttribute('href', '#')
 		const logoImg = makeCustomElement('img', ['logo-img']);
-		logoImg.setAttribute('src', './dist/img/logo.png');
+		logoImg.setAttribute('src', './src/img/STRATOSYS (1).png');
 		logoImg.setAttribute(
 			'alt',
-			'Logo przedstawiające szopa stworzonego z prostych kształtów geometrycznych.'
+			'STRATOSYS Technology logo'
 		);
 		logo.append(logoImg);
 		const rightContainer = makeCustomElement('div', ['flex-right']);
