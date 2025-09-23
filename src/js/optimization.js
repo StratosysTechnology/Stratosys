@@ -407,8 +407,8 @@ const renderDesktopOrMobile = () => {
       onLeft: true,
     },
     {
-      text: 'Services',
-      href: '#services',
+      text: 'Collaboration',
+      href: '#collaboration',
       onLeft: true,
     },
     {
@@ -429,14 +429,14 @@ const renderDesktopOrMobile = () => {
       label: 'Link do maila grupowego'
     },
     {
-      icon: 'facebook-square',
-      href: '#',
-      label: 'Link do facebooka'
+      icon: 'instagram',
+      href: 'https://www.instagram.com/zenvy_health?igsh=MXcydnhqZm8xYml1YQ==',
+      label: 'Link to instagram'
     },
     {
       icon: 'linkedin-square',
-      href: '#',
-      label: 'Link do linkedin'
+      href: 'https://www.linkedin.com/company/zenvy-health/',
+      label: 'Link to linkedin'
     }
   ]
 
