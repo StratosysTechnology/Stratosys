@@ -377,22 +377,13 @@ const renderDesktopOrMobile = () => {
   ]
   const projects = [
     {
-      name: 'power',
-      title: 'Power Kwidzyn',
-      tag: 'Design and Development',
+      name: 'rebax',
+      title: 'Zenvy',
+      tag: 'Health & Fitness',
       date: '8.05.2023',
       visit: 'https://power-kwidzyn.pl',
       code: 'https://github.com/patrykkawiak/OSK-Power-Kwidzyn',
-      content: 'Power Kwidzyn is a driving school that had a poorly functioning, outdated website for a long time. Despite uncertainty, the business owner decided to trust us and is ultimately satisfied with a much better business card for his business on the internet.'
-    },
-    {
-      name: 'rebax',
-      title: 'Rebax',
-      tag: 'Design and Development',
-      date: '26.04.2023',
-      visit: 'https://rebax.pl',
-      code: 'https://github.com/patrykkawiak/Rebax',
-      content: 'Rebax company did not have a website before our service. Despite being introduced to the network recently, it proudly presents this construction wholesale, appearing on the first pages of internet browsers.'
+      content: 'For Patients: Find doctors by specialty, book appointments in seconds, and receive timely reminders for consultations. For Doctors: Manage your schedule, access patient histories, and streamline your practice with our intuitive platform.',
     }
   ]
   const navLinks = [
@@ -425,8 +416,8 @@ const renderDesktopOrMobile = () => {
   const navSocials = [
     {
       icon: 'gmail',
-      href: 'mailto:tbsktechnology@gmail.com',
-      label: 'Link do maila grupowego'
+      href: 'mailto:support@stratosystechnology.com',
+      label: 'Mail to'
     },
     {
       icon: 'instagram',
