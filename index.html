@@ -28,19 +28,33 @@
 			<div class="navbar"></div>
 		</nav>
 		<header>
-			<div class="intro">
+							<div class="intro" id="home" aria-label="Home">
+				<!-- Full-bleed hero image as a sibling to content (fills .intro) -->
+				<div class="intro-hero-wrap" aria-hidden="true">
+					<img src="./dist/img/18129294.jpg" alt="Stratosys Tech hero image" class="intro-hero-img" />
+				</div>
+
+				<!-- overlay to improve contrast on top of the image -->
+				<div class="intro-overlay" aria-hidden="true"></div>
+
+				<!-- content wrapper (sits above the hero image) -->
 				<div class="intro-left">
-					<h1 class="intro-text-cnt">
-						<span class="intro-text">Innovating</span>
-						<span class="intro-text">the Future,</span>
-						<span class="intro-text">One</span>
-						<span class="intro-text">Solution</span>
-						<span class="intro-text">at a</span>
-						<span class="intro-text">Time</span>
+					<h1 class="intro-text-cnt" aria-hidden="false">
+					<span class="intro-text">Innovating</span>
+					<span class="intro-text">the Future,</span>
+					<span class="intro-text">One</span>
+					<span class="intro-text">Solution</span>
+					<span class="intro-text">at a</span>
+					<span class="intro-text">Time</span>
 					</h1>
-					<a href="#about-us" class="button primary intro-btn"
-						>Get to know us</a
-					>
+
+					<p class="intro-description">
+					At <strong>Stratosys Tech</strong>, we build technology that empowers people and organisations.
+					From concept to scale, our focus is on creating digital solutions that are reliable, adaptable,
+					and designed with people at the centre.
+					</p>
+
+					<a href="#about-us" class="button primary intro-btn">Get to know us</a>
 				</div>
 				<div class="racoon">
 					<img
@@ -838,5 +852,140 @@
 		<script>
 			AOS.init();
 		</script>
+<!-- FINAL: Force hero to cover viewport + larger heading + smaller description -->
+<style>
+  /* prevent page horizontal scroll */
+  html, body { overflow-x: hidden !important; }
+
+  /* Main intro container: full width and center content */
+  .intro {
+    position: relative !important;
+    width: 100% !important;
+    min-height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    background: transparent !important;
+  }
+
+  /* Make the hero image cover the entire viewport, unaffected by parent containers */
+  .intro-hero-wrap {
+    position: fixed !important;       /* fixed so it fills viewport always */
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+  }
+  .intro-hero-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;    /* cover entire viewport without distortion */
+    display: block !important;
+    opacity: 0.995 !important;
+    transform-origin: center center !important;
+  }
+
+  /* overlay to help contrast for text on top of image */
+  .intro-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 1 !important;
+    background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.62)) !important;
+    pointer-events: none !important;
+  }
+
+  /* content wrapper above the fixed hero */
+  .intro-left {
+    position: relative !important;
+    z-index: 2 !important;
+    max-width: 1100px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 110px 20px 60px !important; /* enough top padding so headline doesn't hide under navbar */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Heading container: allow natural wrapping while words behave inline */
+  .intro-text-cnt {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 0.28rem !important;
+    margin: 0 0 18px !important;
+    line-height: 1.02 !important;
+  }
+
+  /* MAKE HEADING BIGGER (about +50%) */
+  .intro-text {
+    display: inline-block !important; 
+    font-weight: 800 !important;
+    color: #071237 !important;
+    font-size: clamp(1.7rem, 4.3vw, 3.6rem) !important;
+    letter-spacing: -0.3px !important;
+    padding: 0 6px !important;
+    margin: 0 !important;
+    line-height: 0.95 !important;     /* tight lines for stacked look */
+    white-space: normal !important;
+    text-wrap: balance;
+  }
+
+  /* Smaller description (caption-like) under headline */
+  .intro-description {
+    max-width: 820px !important;
+    margin: 0.6rem auto !important;
+    font-size: clamp(0.9rem, 0.9vw + 0.1rem, 1.05rem) !important; /* deliberately smaller */
+    line-height: 1.45 !important;
+    color: #0d0d0d !important;
+    background: rgba(255,255,255,0.94) !important;
+    padding: 0.64rem 1rem !important;
+    border-radius: 10px !important;
+    box-shadow: 0 10px 28px rgba(16,24,40,0.07) !important;
+    border-left: 5px solid #0b76ff !important;
+    text-align: center !important;
+  }
+
+  /* CTA slightly bigger but balanced */
+  .intro-btn {
+    display: inline-block !important;
+    margin-top: 1rem !important;
+    padding: 0.72rem 1.15rem !important;
+    font-size: clamp(1.15rem, 1.2vw + 0.6rem, 1.4rem) !important;
+    border-radius: 10px !important;
+    background: linear-gradient(90deg,#0b76ff,#0066ff) !important;
+    color: #fff !important;
+    text-decoration: none !important;
+    box-shadow: 0 12px 28px rgba(11,118,255,0.16) !important;
+    transition: transform .18s ease, box-shadow .18s ease !important;
+  }
+  .intro-btn:hover { transform: translateY(-3px) !important; box-shadow: 0 18px 36px rgba(11,118,255,0.2) !important; }
+
+  /* hide racoon if anywhere */
+  .racoon { display: none !important; }
+
+  /* responsive adjustments */
+  @media (max-width: 920px) {
+    .intro-left { padding-top: 90px !important; }
+    .intro-text { font-size: clamp(1.28rem, 5.25vw, 2.1rem) !important; }
+    .intro-description { font-size: clamp(0.88rem, 1.1vw, 0.98rem) !important; }
+    .intro-btn { font-size: clamp(1.0rem, 2.0vw, 1.08rem) !important; padding: 0.6rem 0.9rem !important; }
+  }
+  @media (max-width: 420px) {
+    .intro-left { padding-top: 72px !important; }
+    .intro-text { font-size: clamp(1.0rem, 6.3vw, 1.55rem) !important; }
+    .intro-description { font-size: 0.9rem !important; padding: 0.45rem 0.7rem !important; }
+    .intro-btn { font-size: 1rem !important; padding: 0.45rem 0.75rem !important; }
+  }
+</style>
 	</body>
 </html>
