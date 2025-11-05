@@ -839,6 +839,11 @@
 		</main>
 		<footer class="footer">
 			<span class="footer-text">© 2025 Stratosys Technology. All rights reserved</span>
+			<div class="footer-links">
+			<a href="#" class="footer-link" data-policy="terms">Terms &amp; Conditions</a>
+			<span class="footer-sep"></span>
+			<a href="#" class="footer-link" data-policy="privacy">Privacy Policy</a>
+			</div>
 		</footer>
 		<script src="./dist/js/optimization.min.js"></script>
 		<script src="./dist/js/sections/about-us.min.js" defer></script>
@@ -998,5 +1003,265 @@
     /* Do NOT override .intro-left, .intro-text, .intro-btn, etc. further — keep main.min.css behavior */
   }
 </style>
+<style>
+  /* Modal: dark/grey panel, centered, scrollable with margin on all devices */
+  .footer-links { margin-top: 8px; display:flex; gap:10px; align-items:center; justify-content:center; font-size:0.95rem; }
+  .footer-links .footer-link { color: #cbd5e1; text-decoration:underline; cursor:pointer; }
+  .footer-links .footer-link:hover { color: #fff; }
+  .footer-links .footer-sep { color: #6b7280; }
+
+  .policy-modal { position: fixed; inset: 0; z-index: 2000; display: none; align-items: center; justify-content: center; padding: 28px; }
+  .policy-modal[aria-hidden="false"] { display: flex; }
+
+  .policy-overlay {
+    position: absolute; inset: 0; background: rgba(7, 10, 15, 0.6); backdrop-filter: blur(4px);
+  }
+
+  .policy-panel {
+    position: relative;
+    z-index: 2;
+    width: min(920px, calc(100% - 48px));
+    max-height: calc(100vh - 96px);
+    background: linear-gradient(180deg, #0b0f14, #0f1720);
+    color: #e6eef8;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(2,6,23,0.6);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .policy-panel .policy-header {
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+  }
+  .policy-panel .policy-title { font-weight:700; font-size:1.05rem; letter-spacing: -0.2px; color:#fff; }
+  .policy-close {
+    background: transparent;
+    border: 0;
+    color: #cbd5e1;
+    font-size: 1.6rem;
+    line-height:1;
+    cursor:pointer;
+    padding: 6px 10px;
+    border-radius: 8px;
+  }
+  .policy-close:hover { color: #fff; background: rgba(255,255,255,0.02); }
+
+  .policy-scroll {
+    padding: 18px 20px 22px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #dbeafe;
+  }
+
+  .policy-scroll h3 { margin-top: 10px; color:#fff; }
+  .policy-scroll p { margin: 8px 0; color: #cfe8ff; }
+  .policy-scroll ul { margin: 8px 0 12px 20px; color: #cfe8ff; }
+  .policy-scroll li { margin-bottom:6px; }
+
+  /* make inner content comfortable on small screens */
+  @media (max-width: 520px) {
+    .policy-panel { width: calc(100% - 32px); max-height: calc(100vh - 56px); border-radius: 10px; }
+    .policy-header { padding: 12px 14px; }
+    .policy-scroll { padding: 12px 14px 18px; font-size: 0.95rem; }
+  }
+
+  /* subtle custom scrollbar */
+  .policy-scroll::-webkit-scrollbar { width: 10px; }
+  .policy-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.06); border-radius: 8px; }
+  .policy-scroll::-webkit-scrollbar-track { background: transparent; }
+</style>
+
+<div id="policy-modal" class="policy-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="policy-title">
+  <div class="policy-overlay" data-close-modal></div>
+
+  <div class="policy-panel" role="document" aria-live="polite">
+    <div class="policy-header">
+      <div id="policy-title" class="policy-title">Policy</div>
+      <button class="policy-close" aria-label="Close policy" data-close-modal>&times;</button>
+    </div>
+
+    <div class="policy-scroll" id="policy-content" tabindex="0">
+      <!-- JS will inject the chosen policy content here -->
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const modal = document.getElementById('policy-modal');
+    const contentEl = document.getElementById('policy-content');
+    const titleEl = document.getElementById('policy-title');
+    const closeButtons = modal.querySelectorAll('[data-close-modal]');
+    const footerLinks = document.querySelectorAll('.footer-link');
+    let lastFocused = null;
+
+    // Effective Date set per request
+    const EFFECTIVE_DATE = 'November 5, 2025';
+
+    // Terms & Conditions HTML
+    const TERMS_HTML = `
+      <h3>Terms &amp; Conditions</h3>
+      <p><strong>Effective Date:</strong> ${EFFECTIVE_DATE}</p>
+      <p><strong>Company:</strong> Stratosys Tech Private Limited (“Company”, “we”, “our”, “us”)</p>
+      <p><strong>Website:</strong> www.stratosystech.com</p>
+      <ol>
+        <li><strong>Acceptance of Terms</strong>
+          <p>By accessing or using this website, you agree to be bound by these Terms &amp; Conditions. If you do not agree, you must discontinue use immediately. These Terms apply to all visitors, users, and others who access or use our website.</p>
+        </li>
+        <li><strong>Eligibility</strong>
+          <ul>
+            <li>You must be at least 18 years old to use this website.</li>
+            <li>By using the site, you represent that you have the legal capacity to enter into these Terms.</li>
+          </ul>
+        </li>
+        <li><strong>Use of Website</strong>
+          <ul>
+            <li>You agree to use the website only for lawful purposes.</li>
+            <li>You must not:
+              <ul>
+                <li>Attempt to gain unauthorized access to our systems.</li>
+                <li>Upload or transmit viruses, malware, or harmful code.</li>
+                <li>Use the website in a way that could damage, disable, or impair its functionality.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><strong>Intellectual Property Rights</strong>
+          <p>All content, trademarks, logos, graphics, and software on this website are the property of Stratosys Tech Pvt. Ltd. You may not copy, reproduce, distribute, or create derivative works without prior written consent.</p>
+        </li>
+        <li><strong>Products and Services</strong>
+          <p>Information about our products (including Zenvy) is provided for general informational purposes. We reserve the right to modify, suspend, or discontinue any product or service at any time without notice. Product descriptions are not guarantees of performance or suitability for specific purposes.</p>
+        </li>
+        <li><strong>Third-Party Links</strong>
+          <p>Our website may contain links to third-party websites. We are not responsible for the content, accuracy, or practices of such websites. Accessing third-party sites is at your own risk.</p>
+        </li>
+        <li><strong>Limitation of Liability</strong>
+          <p>To the maximum extent permitted by law, Stratosys Tech Pvt. Ltd. shall not be liable for any direct, indirect, incidental, or consequential damages arising from your use of this website. We do not guarantee uninterrupted or error-free operation of the website.</p>
+        </li>
+        <li><strong>Indemnification</strong>
+          <p>You agree to indemnify and hold harmless Stratosys Tech Pvt. Ltd., its directors, employees, and affiliates from any claims, damages, or expenses arising from your use of the website or violation of these Terms.</p>
+        </li>
+        <li><strong>Governing Law & Jurisdiction</strong>
+          <p>These Terms are governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts in Mysuru, Karnataka.</p>
+        </li>
+        <li><strong>Changes to Terms</strong>
+          <p>We may update these Terms from time to time. Continued use of the website after changes indicates your acceptance of the revised Terms.</p>
+        </li>
+      </ol>
+    `;
+
+    // Privacy Policy HTML
+    const PRIVACY_HTML = `
+      <h3>Privacy Policy</h3>
+      <p><strong>Effective Date:</strong> ${EFFECTIVE_DATE}</p>
+      <p><strong>Company:</strong> Stratosys Tech Private Limited (“Company”, “we”, “our”, “us”)</p>
+      <p><strong>Website:</strong> www.stratosystech.com</p>
+
+      <ol>
+        <li><strong>Introduction</strong>
+          <p>We respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your data when you use our website.</p>
+        </li>
+        <li><strong>Information We Collect</strong>
+          <ul>
+            <li><strong>Personal Information:</strong> Name, email address, phone number, and other details you provide via forms.</li>
+            <li><strong>Technical Information:</strong> IP address, browser type, operating system, and usage data.</li>
+            <li><strong>Cookies & Tracking:</strong> We may use cookies and similar technologies to improve user experience.</li>
+          </ul>
+        </li>
+        <li><strong>How We Use Your Information</strong>
+          <ul>
+            <li>To provide, operate, and improve our website and services.</li>
+            <li>To respond to inquiries and communicate with you.</li>
+            <li>To personalise user experience and deliver relevant content.</li>
+            <li>To comply with legal obligations.</li>
+          </ul>
+        </li>
+        <li><strong>Sharing & Disclosure</strong>
+          <p>We do not sell or rent your personal data. We may share data with service providers who assist in operating our website and with legal authorities if required by law. Any third-party service providers are bound by confidentiality obligations.</p>
+        </li>
+        <li><strong>Data Security</strong>
+          <p>We implement reasonable technical and organisational measures to protect your data. However, no method of transmission over the internet is 100% secure.</p>
+        </li>
+        <li><strong>Cookies</strong>
+          <p>Cookies help us analyse traffic and improve functionality. You can disable cookies in your browser settings, but some features may not work properly.</p>
+        </li>
+        <li><strong>Your Rights</strong>
+          <p>Depending on applicable law, you may have the right to access the personal data we hold about you; request correction or deletion; withdraw consent for data processing; or lodge a complaint with a data protection authority.</p>
+        </li>
+        <li><strong>Data Retention</strong>
+          <p>We retain personal data only as long as necessary for the purposes outlined in this policy, unless a longer retention period is required by law.</p>
+        </li>
+        <li><strong>International Transfers</strong>
+          <p>If we transfer your data outside India, we will ensure appropriate safeguards are in place to protect your information.</p>
+        </li>
+        <li><strong>Updates to Privacy Policy</strong>
+          <p>We may update this Privacy Policy periodically. The latest version will always be available on this page.</p>
+        </li>
+        <li><strong>Contact Us</strong>
+          <p>If you have questions about this Privacy Policy or our data practices, please contact us at: <a href="mailto:contact@stratosystech.com">contact@stratosystech.com</a>, +91 63612 18556<br>
+          No.175/2, 9th Cross, Kaveri Main Road, Mysore, Karnataka, 570019</p>
+        </li>
+      </ol>
+    `;
+
+    function openModal(kind) {
+      lastFocused = document.activeElement;
+      titleEl.textContent = (kind === 'privacy') ? 'Privacy Policy' : 'Terms & Conditions';
+      contentEl.innerHTML = (kind === 'privacy') ? PRIVACY_HTML : TERMS_HTML;
+      modal.setAttribute('aria-hidden', 'false');
+      // move focus to close button for accessibility
+      const closeBtn = modal.querySelector('.policy-close');
+      setTimeout(() => closeBtn && closeBtn.focus(), 50);
+      // prevent page scroll while open
+      document.documentElement.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.setAttribute('aria-hidden', 'true');
+      // restore scroll
+      document.documentElement.style.overflow = '';
+      // restore focus
+      try { lastFocused && lastFocused.focus(); } catch (e) {}
+    }
+
+    // open via footer links
+    footerLinks.forEach(link => {
+      link.addEventListener('click', (ev) => {
+        ev.preventDefault();
+        const kind = link.getAttribute('data-policy');
+        openModal(kind);
+      });
+    });
+
+    // close on overlay click or close buttons
+    closeButtons.forEach(btn => btn.addEventListener('click', closeModal));
+    modal.querySelector('.policy-overlay').addEventListener('click', closeModal);
+
+    // close on ESC
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal();
+      // trap tab focus inside modal when open
+      if (modal.getAttribute('aria-hidden') === 'false' && e.key === 'Tab') {
+        const focusable = modal.querySelectorAll('a, button, textarea, input, [tabindex]:not([tabindex="-1"])');
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault(); last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault(); first.focus();
+        }
+      }
+    });
+  })();
+</script>
 	</body>
 </html>
