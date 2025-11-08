@@ -913,7 +913,7 @@
       max-width: 1100px !important;
       width: 100% !important;
       margin: 0 auto !important;
-      padding: 110px 20px 60px !important;
+      padding: 120px 48px 60px !important;
       display: flex !important;
       flex-direction: column !important;
       align-items: center !important;
@@ -936,7 +936,7 @@
       color: #071237 !important;
       font-size: clamp(1.7rem, 4.3vw, 3.6rem) !important;
       letter-spacing: -0.3px !important;
-      padding: 0 6px !important;
+      padding: 0 !important;
       margin: 0 !important;
       line-height: 0.95 !important;
       white-space: normal !important;
@@ -972,11 +972,9 @@
     /* hide original racoon on desktop to avoid duplication */
     .racoon { display: none !important; }
 
-    @media (max-width: 1100px) {
-      .intro-left { padding-top: 90px !important; }
-      .intro-text { font-size: clamp(1.28rem, 5.25vw, 2.1rem) !important; }
-      .intro-description { font-size: clamp(0.88rem, 1.1vw, 0.98rem) !important; }
-      .intro-btn { font-size: clamp(1.0rem, 2.0vw, 1.08rem) !important; padding: 0.6rem 0.9rem !important; }
+    @media (max-width: 1400px) {
+      .intro-left { padding-left: 120px !important; }
+      .intro-text { font-size: clamp(2.6rem, 5.2vw, 8rem) !important; }
     }
   } /* end desktop media query */
 
@@ -998,8 +996,35 @@
     /* hide the subheading/paragraph on mobile */
     .intro-description { display: none !important; }
 
-    /* Do NOT override .intro-left, .intro-text, .intro-btn, etc. further — keep main.min.css behavior */
+	.intro-left {
+    width: 100% !important;
+    padding: 36px 18px 48px !important;
+    box-sizing: border-box !important;
+    text-align: left !important;
+    align-items: flex-start !important;
   }
+
+  /* make headline much bigger and responsive on mobile */
+  .intro-text-cnt { gap: 0.12rem !important; justify-content: flex-start !important; }
+  .intro-text {
+    display: inline-block !important;
+    font-weight: 800 !important;
+    color: #071237 !important;
+    /* Mobile headline: min 2.2rem up to 5.2rem using viewport width */
+    font-size: clamp(2.2rem, 12.5vw, 5.2rem) !important;
+    line-height: 0.92 !important;
+    letter-spacing: -0.5px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    white-space: normal !important;
+  }
+
+  /* avoid horizontal scroll on tiny screens */
+  html, body { overflow-x: hidden !important; }
+}
+
+    /* Do NOT override .intro-left, .intro-text, .intro-btn, etc. further — keep main.min.css behavior */
+
 </style>
 <style>
   /* Modal: dark/grey panel, centered, scrollable with margin on all devices */
