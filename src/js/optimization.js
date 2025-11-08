@@ -355,25 +355,20 @@ const renderDesktopOrMobile = () => {
   const projectsSection = document.querySelector('.projects')
   const processes = [
       {
-        heading: 'How do conversations go?',
-        text: 'We start by defining the service provided. If it is construction or design, we ask if there is any logo or business card. Then we ask about the content that should be on the site. Based on this, we create only the structure and price the project. Then we start designing.',
-        button: 'Consultation',
+        heading: 'What drives Stratosys Tech’s innovation?',
+        text: 'Stratosys Tech Private Limited is a technology company focused on solving realworld challenges through innovation and empathy. We are not limited to one industry — our approach blends compliance, design, and digital transformation to create products that make a difference.',
+        button: 'Who We Are',
       },
       {
-        heading: 'What does the project presentation look like?',
-        text: 'After finishing the website project, we present it to you for evaluation. Then we accept all comments regarding color selection, section construction, etc. We also explain why certain elements must contain certain features. Later we apply all changes.',
-        button: 'Presentation',
+        heading: 'Where do we aim to lead globally?',
+        text: 'To become a global leader in inclusive technology solutions that empower underserved communities.',
+        button: 'Vision',
       },
-      {
-        heading: 'What is the approval stage?',
-        text: 'This is the step where you decide to accept or reject our services. If you commission us to create a website, we will tell you how long it will probably take us. Additionally, we will need detailed content that should finally be on your website.',
-        button: 'Approval',
-      },
-      {
-        heading: 'Project execution!',
-        text: 'Leave this step to us! We will immediately start creating your modern, dream business card website. During this time, you can give us any additional information, and we will take it into account. After the work is finished, all that remains is to place it on hosting.',
-        button: 'Execution',
-      }
+	{
+	heading: 'How do we empower through technology?',
+	text: 'Build scalable, compliant digital platforms , Empower professionals and end-users with intuitive tools , Expand across industries while staying human-centered',
+	button: 'Mission',
+	},
   ]
   const projects = [
     {
