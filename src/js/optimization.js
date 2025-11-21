@@ -384,27 +384,32 @@ const renderDesktopOrMobile = () => {
   const navLinks = [
     {
       text: 'Home',
-      href: '#',
+      href: '#home',
       onLeft: true,
     },
     {
-      text: 'About us',
+      text: 'About Us',
       href: '#about-us',
+      onLeft: true,
+    },
+    {
+      text: 'Products',
+      href: '#projects',
       onLeft: true,
     },
     {
       text: 'Collaboration',
       href: '#collaboration',
-      onLeft: true,
-    },
-    {
-      text: 'FAQ',
-      href: '#faq',
       onLeft: false
     },
     {
       text: 'Contact',
       href: '#contact',
+      onLeft: false
+    },
+    {
+      text: 'FAQ',
+      href: '#faq',
       onLeft: false
     }
   ]
